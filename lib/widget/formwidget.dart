@@ -77,29 +77,36 @@ class _MyWidgetState extends State<FormWidget> {
               }
             },
           ),
-          ListTile(
-            title: const Text('P'),
-            leading: Radio<int>(
-              value: 1,
-              groupValue: selectedOption,
-              onChanged: (value) {
-                setState(() {
-                  selectedOption = 1;
-                });
-              },
-            ),
-          ),
-          ListTile(
-            title: const Text('L'),
-            leading: Radio<int>(
-              value: 2,
-              groupValue: selectedOption,
-              onChanged: (value) {
-                setState(() {
-                  selectedOption = 2;
-                });
-              },
-            ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Column(
+                children: [
+                  Text("Jenis Kelamin"),
+                ],
+              ),
+              Radio<int>(
+                value: 1,
+                groupValue: selectedOption,
+                onChanged: (value) {
+                  setState(() {
+                    selectedOption = value!;
+                  });
+                },
+              ),
+              Text('P'),
+              SizedBox(width: 20),
+              Radio<int>(
+                value: 2,
+                groupValue: selectedOption,
+                onChanged: (value) {
+                  setState(() {
+                    selectedOption = value!;
+                  });
+                },
+              ),
+              Text('L'),
+            ],
           ),
         ],
       ),

@@ -35,7 +35,7 @@ class DataFormScreen extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => MenuScreen()),
                           (route) => false);
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("Login berhasil"),
+                        content: Text("Data Telah Masuk"),
                       ));
                     }
                   },
