@@ -77,10 +77,10 @@ class _MyWidgetState extends State<FormWidget> {
               }
             },
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             children: [
-              Column(
+              const Column(
                 children: [
                   Text("Jenis Kelamin"),
                 ],

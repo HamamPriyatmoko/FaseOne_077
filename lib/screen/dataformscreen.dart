@@ -32,7 +32,11 @@ class DataFormScreen extends StatelessWidget {
                     if (formkey.currentState!.validate()) {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => MenuScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => MenuScreen(
+                                    nama: nama.text,
+                                    notelp: notelp.text,
+                                  )),
                           (route) => false);
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text("Data Telah Masuk"),
