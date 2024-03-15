@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan3ucp1/screen/menu_screen.dart';
 import 'package:pertemuan3ucp1/widget/footerwidget.dart';
 import 'package:pertemuan3ucp1/widget/formwidget.dart';
 import 'package:pertemuan3ucp1/widget/headerwidget.dart';
@@ -26,7 +27,19 @@ class DataFormScreen extends StatelessWidget {
                   etAlamat: alamat,
                   formkey: formkey,
                 ),
-                FooterWidget(onPressedSubmit: (){})
+                FooterWidget(
+                  onPressedSubmit: () {
+                    if (formkey.currentState!.validate()) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => MenuScreen()),
+                          (route) => false);
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Login berhasil"),
+                      ));
+                    }
+                  },
+                )
               ],
             ),
           ),
